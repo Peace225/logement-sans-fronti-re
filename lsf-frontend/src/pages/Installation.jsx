@@ -1,161 +1,122 @@
-import MainLayout from '../layouts/MainLayout'
-import { CheckCircle, Circle, Plane, Home, CreditCard, FileText, Wifi, MapPin } from 'lucide-react'
+import MainLayout from '../layouts/MainLayout';
+import { Check, Plane, Home, CreditCard, FileText, MapPin, ShieldCheck, Phone, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Installation() {
   const steps = [
-    {
-      id: 1,
-      title: 'Confirmation & paiement',
-      desc: 'Tu choisis ton pack (199€, 399€ ou 699€) et ton logement est bloqué.',
-      icon: CheckCircle,
-      status: 'done',
-      time: 'Jour 0'
-    },
-    {
-      id: 2,
-      title: 'Accueil aéroport',
-      desc: 'Notre équipe t’attend à CDG, Orly, Bruxelles ou Madrid avec une pancarte LSF.',
-      icon: Plane,
-      status: 'done',
-      time: 'Jour J'
-    },
-    {
-      id: 3,
-      title: 'Remise des clés',
-      desc: 'État des lieux avec vidéo LSF. Vérification conformité photos.',
-      icon: Home,
-      status: 'current',
-      time: 'Jour J'
-    },
-    {
-      id: 4,
-      title: 'Assurance habitation',
-      desc: 'Contrat signé en 10 min. Attestation envoyée au propriétaire.',
-      icon: FileText,
-      status: 'upcoming',
-      time: 'J+1'
-    },
-    {
-      id: 5,
-      title: 'Ouverture compte bancaire',
-      desc: 'RDV garanti sous 72h. Khady fournit attestation de domicile.',
-      icon: CreditCard,
-      status: 'upcoming',
-      time: 'J+2'
-    },
-    {
-      id: 6,
-      title: 'Dossier CAF',
-      desc: 'On remplit tout. Tu touches 150-200€/mois dès le mois suivant.',
-      icon: FileText,
-      status: 'upcoming',
-      time: 'J+3'
-    },
-    {
-      id: 7,
-      title: 'Carte SIM & transport',
-      desc: 'Forfait étudiant + carte Navigo/TEC. Tu es connecté.',
-      icon: Wifi,
-      status: 'upcoming',
-      time: 'J+3'
-    },
-    {
-      id: 8,
-      title: 'Installation terminée',
-      desc: 'Suivi WhatsApp 3 mois inclus. Bienvenue chez toi !',
-      icon: MapPin,
-      status: 'upcoming',
-      time: 'J+7'
-    },
-  ]
+    { id: 1, title: 'Recherche de logement', desc: 'Sélection et validation de votre futur lieu de vie selon vos critères.', icon: Home, status: 'done', time: 'J-15' },
+    { id: 2, title: 'Garant financier', desc: 'Constitution et dépôt de votre dossier de garantie certifié.', icon: ShieldCheck, status: 'done', time: 'J-7' },
+    { id: 3, title: 'Transfert aéroport', desc: 'Accueil personnalisé à votre arrivée par l\'équipe LSF.', icon: Plane, status: 'done', time: 'Jour J' },
+    { id: 4, title: 'Remise des clés', desc: 'État des lieux complet, inventaire et installation accompagnée.', icon: MapPin, status: 'current', time: 'Jour J' },
+    { id: 5, title: 'Assurance habitation', desc: 'Souscription et attestation transmise directement au propriétaire.', icon: FileText, status: 'upcoming', time: 'J+1' },
+    { id: 6, title: 'Compte bancaire', desc: 'Ouverture assistée avec attestation de domicile fournie.', icon: CreditCard, status: 'upcoming', time: 'J+2' },
+    { id: 7, title: 'Téléphone & Internet', desc: 'Activation de votre ligne et forfait étudiant négocié.', icon: Phone, status: 'upcoming', time: 'J+3' },
+    { id: 8, title: 'Intégration & CAF', desc: 'Optimisation de vos aides et suivi complet pendant 3 mois.', icon: Check, status: 'upcoming', time: 'J+7' },
+  ];
 
   return (
     <MainLayout>
-      {/* Hero */}
-      <section className="bg-navy text-white">
-        <div className="max-w-4xl mx-auto px-4 py-16 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold">Ton installation pas à pas</h1>
-          <p className="mt-3 text-lg opacity-90">Suivi en temps réel par l'équipe de Khady DIABATE</p>
+      {/* HERO PREMIUM */}
+      <section className="relative bg-[#0A192F] pt-32 pb-32 px-6 overflow-hidden border-b border-white/5">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(255,255,255,0.05),transparent_70%)]" />
+        <div className="relative max-w-3xl mx-auto text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-sm">
+            <Sparkles size={12} className="text-[#F25C05]" />
+            <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-white/70">Parcours d'installation</span>
+          </div>
+          <h1 className="text-5xl md:text-6xl font-black tracking-tight text-white mb-6">
+            Votre installation<br />
+            <span className="font-light italic text-white/70">sur mesure</span>
+          </h1>
+          <p className="text-lg leading-relaxed text-white/50 max-w-lg mx-auto font-light">
+            Un accompagnement complet, de la recherche de logement à votre intégration finale. Sans friction.
+          </p>
         </div>
       </section>
 
-      {/* Timeline */}
-      <section className="max-w-4xl mx-auto px-4 py-16">
-        <div className="relative">
-          {/* Ligne verticale */}
-          <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gray-200 hidden md:block"></div>
+      {/* TIMELINE CENTRALISÉE */}
+      <section className="px-6 py-24 bg-zinc-50/50">
+        <div className="max-w-3xl mx-auto">
+          <div className="relative">
+            {/* Ligne verticale guide */}
+            <div className="absolute left-[24px] top-4 bottom-4 w-px bg-zinc-200 hidden md:block" />
 
-          <div className="space-y-8">
-            {steps.map((step, idx) => {
-              const Icon = step.icon
-              const isDone = step.status === 'done'
-              const isCurrent = step.status === 'current'
-              
-              return (
-                <div key={step.id} className="relative flex gap-6">
-                  {/* Icône */}
-                  <div className={`relative z-10 w-12 h-12 rounded-full grid place-items-center shrink-0 ${
-                    isDone ? 'bg-green-100' : isCurrent ? 'bg-orange' : 'bg-gray-100'
-                  }`}>
-                    {isDone ? (
-                      <CheckCircle className="text-green-600" size={24}/>
-                    ) : isCurrent ? (
-                      <Icon className="text-white" size={24}/>
-                    ) : (
-                      <Circle className="text-gray-400" size={24}/>
-                    )}
-                  </div>
+            <div className="space-y-8">
+              {steps.map((step) => {
+                const Icon = step.icon;
+                const isDone = step.status === 'done';
+                const isCurrent = step.status === 'current';
 
-                  {/* Contenu */}
-                  <div className={`flex-1 pb-8 ${idx !== steps.length -1 ? 'border-b md:border-0' : ''}`}>
-                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2">
-                      <div>
-                        <div className="flex items-center gap-3">
-                          <h3 className={`text-xl font-bold ${isCurrent ? 'text-orange' : 'text-navy'}`}>
-                            Étape {step.id} : {step.title}
-                          </h3>
-                          {isCurrent && (
-                            <span className="bg-orange/10 text-orange text-xs px-2 py-1 rounded-full font-medium">En cours</span>
-                          )}
-                          {isDone && (
-                            <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-medium">Terminé</span>
-                          )}
-                        </div>
-                        <p className="text-gray-600 mt-1">{step.desc}</p>
-                      </div>
-                      <span className="text-sm text-gray-500 font-medium whitespace-nowrap">{step.time}</span>
+                return (
+                  <div key={step.id} className="relative flex gap-6 group">
+                    {/* Pastille */}
+                    <div
+                      className={`relative z-10 w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 border transition-all duration-300
+                      ${isDone ? 'bg-[#0A192F] border-[#0A192F] text-white shadow-lg' : ''}
+                      ${isCurrent ? 'bg-[#F25C05] border-[#F25C05] text-white shadow-lg shadow-orange-500/20' : ''}
+                      ${!isDone && !isCurrent ? 'bg-white border-zinc-200 text-zinc-400' : ''}
+                      `}
+                    >
+                      {isDone ? <Check size={20} strokeWidth={2.5} /> : <Icon size={20} strokeWidth={1.5} />}
                     </div>
 
-                    {/* Contenu spécial étape en cours */}
-                    {isCurrent && (
-                      <div className="mt-4 bg-orange/5 border border-orange/20 rounded-xl p-4">
-                        <p className="text-sm"><strong>Prochaine action :</strong> Rendez-vous aujourd'hui à 14h au 45 Rue Tolbiac. Amène ta pièce d'identité et ton attestation LSF.</p>
-                        <button className="mt-3 text-sm bg-orange text-white px-4 py-2 rounded-lg font-medium">Voir sur Maps</button>
+                    {/* Carte */}
+                    <div
+                      className={`flex-1 rounded-2xl p-8 transition-all duration-300 border
+                      ${isCurrent ? 'bg-white border-orange-100 shadow-xl shadow-orange-500/5' : 'bg-white border-zinc-100 shadow-sm hover:shadow-md hover:border-zinc-200'}
+                      `}
+                    >
+                      <div className="flex flex-wrap justify-between items-start gap-3 mb-3">
+                        <h3 className="text-xl font-bold tracking-tight text-zinc-900">
+                          <span className="text-zinc-300 font-mono text-sm mr-3">0{step.id}</span>
+                          {step.title}
+                        </h3>
+                        <span className={`text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-lg
+                          ${isDone ? 'bg-zinc-100 text-zinc-600' : ''}
+                          ${isCurrent ? 'bg-orange-50 text-orange-600' : ''}
+                          ${!isDone && !isCurrent ? 'bg-zinc-100 text-zinc-400' : ''}
+                        `}>
+                          {step.time}
+                        </span>
                       </div>
-                    )}
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-        </div>
-      </section>
 
-      {/* Support */}
-      <section className="bg-gray-50 py-12">
-        <div className="max-w-4xl mx-auto px-4">
-          <div className="bg-white rounded-2xl border p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-4">
-            <div>
-              <h3 className="font-bold text-lg">Une question sur ton installation ?</h3>
-              <p className="text-gray-600 text-sm">Ton conseiller dédié : Khady DIABATE</p>
+                      <p className="text-zinc-500 leading-relaxed font-light">{step.desc}</p>
+
+                      {isCurrent && (
+                        <div className="mt-6 pt-5 border-t border-zinc-50 flex items-center justify-between">
+                          <span className="text-xs font-medium text-zinc-400 uppercase tracking-wide">Action en cours</span>
+                          <Link to="#" className="text-sm font-semibold text-[#F25C05] hover:text-orange-700 inline-flex items-center gap-1">
+                            Voir les détails <span aria-hidden>→</span>
+                          </Link>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
-            <div className="flex gap-3">
-              <a href="https://wa.me/33600000000" className="bg-green-500 text-white px-5 py-2.5 rounded-xl font-semibold">WhatsApp</a>
-              <a href="tel:+33600000000" className="border px-5 py-2.5 rounded-xl font-semibold">Appeler</a>
+          </div>
+
+          {/* SUPPORT CARD */}
+          <div className="mt-20">
+            <div className="bg-[#0A192F] rounded-3xl px-8 md:px-12 py-12 text-center relative overflow-hidden shadow-2xl">
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_rgba(242,92,5,0.15),transparent_60%)]" />
+              <div className="relative">
+                <h3 className="text-2xl font-bold tracking-tight text-white">Besoin d'une assistance immédiate ?</h3>
+                <p className="mt-2 text-white/50 font-light">Notre équipe répond en moins de 10 minutes.</p>
+                <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+                  <a href="https://wa.me/33600000000" className="h-14 px-8 rounded-xl bg-white text-[#0A192F] font-bold inline-flex items-center justify-center hover:bg-zinc-100 transition-all shadow-lg hover:shadow-xl">
+                    Contacter sur WhatsApp
+                  </a>
+                  <a href="tel:+33600000" className="h-14 px-8 rounded-xl bg-white/10 border border-white/10 text-white font-semibold inline-flex items-center justify-center hover:bg-white/15 transition-all backdrop-blur">
+                    Appeler l'équipe
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
     </MainLayout>
-  )
+  );
 }

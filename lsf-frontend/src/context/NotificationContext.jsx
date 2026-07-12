@@ -3,10 +3,8 @@ import { createContext, useContext, useState } from 'react'
 const NotificationContext = createContext()
 
 export function NotificationProvider({ children }) {
-  const [notifications, setNotifications] = useState([
-    { id: 1, type: 'success', message: 'Bienvenue chez LSF !', read: false },
-    { id: 2, type: 'warning', message: 'Finalise ton assurance avant le 25 août', read: false },
-  ])
+  // Le tableau est maintenant vide par défaut
+  const [notifications, setNotifications] = useState([])
 
   const addNotification = (message, type = 'info') => {
     const notif = { id: Date.now(), message, type, read: false, time: new Date() }

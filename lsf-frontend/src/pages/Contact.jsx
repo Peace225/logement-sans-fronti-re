@@ -1,129 +1,100 @@
-import MainLayout from '../../layouts/MainLayout'
-import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react'
-import { useState } from 'react'
+import { useState } from 'react';
+import MainLayout from '../layouts/MainLayout';
+import { Mail, Phone, MapPin, MessageSquare, Send } from 'lucide-react';
 
 export default function Contact() {
-  const [form, setForm] = useState({name:'', email:'', subject:'', message:''})
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    // TODO: brancher sur Supabase ou EmailJS
-    alert(`Merci ${form.name}, ton message est envoyé à l'équipe LSF !`)
-    setForm({name:'', email:'', subject:'', message:''})
-  }
+  const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
 
   return (
     <MainLayout>
-      {/* Hero */}
-      <section className="bg-navy text-white">
-        <div className="max-w-7xl mx-auto px-4 py-16">
-          <h1 className="text-4xl font-bold">Contactez-nous</h1>
-          <p className="mt-3 opacity-90 max-w-2xl">Une question sur un logement, un visa, ou l'installation ? L'équipe de Khady DIABATE vous répond en moins de 24h.</p>
-        </div>
+      {/* HERO SECTION */}
+      <section className="bg-[#0A192F] pt-24 pb-20 px-6 text-center">
+        <h1 className="text-4xl md:text-5xl font-black text-white mb-6">Contactez-nous</h1>
+        <p className="text-white/60 max-w-xl mx-auto font-light text-lg">
+          Une question sur votre installation, une demande de partenariat ou besoin d'assistance ? 
+          Notre équipe est à votre écoute.
+        </p>
       </section>
 
-      <section className="max-w-7xl mx-auto px-4 py-16">
-        <div className="grid lg:grid-cols-3 gap-12">
-          {/* Formulaire */}
-          <div className="lg:col-span-2">
-            <div className="bg-white p-8 rounded-2xl shadow-sm border">
-              <h2 className="text-2xl font-bold text-navy mb-6">Envoyez-nous un message</h2>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <input 
-                    required
-                    value={form.name}
-                    onChange={e=>setForm({...form,name:e.target.value})}
-                    placeholder="Nom complet" 
-                    className="w-full border rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-orange"
-                  />
-                  <input 
-                    required type="email"
-                    value={form.email}
-                    onChange={e=>setForm({...form,email:e.target.value})}
-                    placeholder="Email" 
-                    className="w-full border rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-orange"
-                  />
+      {/* CONTACT GRID */}
+      <section className="py-20 px-6 max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-12 gap-12">
+          
+          {/* COLONNE GAUCHE: INFOS */}
+          <div className="lg:col-span-4 space-y-8">
+            <div className="bg-white p-8 rounded-3xl border border-zinc-100 shadow-sm">
+              <h2 className="text-xl font-bold text-[#0A192F] mb-6">Nos bureaux</h2>
+              
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="bg-orange-50 text-[#F25C05] p-3 rounded-xl"><MapPin size={20} /></div>
+                  <div>
+                    <h4 className="font-bold text-zinc-900">Abidjan</h4>
+                    <p className="text-zinc-500 text-sm">Plateau, Abidjan<br />Côte d'Ivoire</p>
+                  </div>
                 </div>
-                <select 
-                  value={form.subject}
-                  onChange={e=>setForm({...form,subject:e.target.value})}
-                  className="w-full border rounded-xl p-3"
-                >
-                  <option value="">Choisissez un sujet</option>
-                  <option>Logement France</option>
-                  <option>Logement Belgique</option>
-                  <option>Logement Espagne</option>
-                  <option>Garantie locative</option>
-                  <option>Pack installation</option>
-                  <option>Partenariat université</option>
+
+                <div className="flex items-start gap-4">
+                  <div className="bg-orange-50 text-[#F25C05] p-3 rounded-xl"><Mail size={20} /></div>
+                  <div>
+                    <h4 className="font-bold text-zinc-900">Email</h4>
+                    <p className="text-zinc-500 text-sm">contact@lsf-platform.com</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="bg-orange-50 text-[#F25C05] p-3 rounded-xl"><Phone size={20} /></div>
+                  <div>
+                    <h4 className="font-bold text-zinc-900">Téléphone</h4>
+                    <p className="text-zinc-500 text-sm">+225 00 00 00 00</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* COLONNE DROITE: FORMULAIRE */}
+          <div className="lg:col-span-8 bg-white p-8 md:p-10 rounded-3xl border border-zinc-100 shadow-xl shadow-zinc-100/50">
+            <div className="flex items-center gap-3 mb-8">
+              <MessageSquare className="text-[#F25C05]" size={24} />
+              <h2 className="text-2xl font-bold text-[#0A192F]">Envoyez-nous un message</h2>
+            </div>
+
+            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label className="text-xs font-bold text-zinc-400 uppercase tracking-wider">Nom complet</label>
+                  <input type="text" className="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#F25C05]/20 focus:border-[#F25C05] transition-all" placeholder="Jean Dupont" />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-xs font-bold text-zinc-400 uppercase tracking-wider">Email</label>
+                  <input type="email" className="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#F25C05]/20 focus:border-[#F25C05] transition-all" placeholder="jean@exemple.com" />
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-xs font-bold text-zinc-400 uppercase tracking-wider">Sujet</label>
+                <select className="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#F25C05]/20 focus:border-[#F25C05] transition-all">
+                  <option>Accompagnement installation</option>
+                  <option>Logement</option>
+                  <option>Partenariat</option>
+                  <option>Autre</option>
                 </select>
-                <textarea 
-                  required rows="5"
-                  value={form.message}
-                  onChange={e=>setForm({...form,message:e.target.value})}
-                  placeholder="Votre message..." 
-                  className="w-full border rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-orange"
-                />
-                <button type="submit" className="w-full bg-orange text-white py-3 rounded-xl font-semibold hover:bg-orange/90">
-                  Envoyer le message
-                </button>
-              </form>
-            </div>
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-xs font-bold text-zinc-400 uppercase tracking-wider">Message</label>
+                <textarea rows={5} className="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#F25C05]/20 focus:border-[#F25C05] transition-all" placeholder="Comment pouvons-nous vous aider ?" />
+              </div>
+
+              <button className="w-full md:w-auto bg-[#0A192F] hover:bg-[#1e3a6e] text-white px-10 py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all">
+                <Send size={18} />
+                Envoyer le message
+              </button>
+            </form>
           </div>
-
-          {/* Coordonnées */}
-          <div className="space-y-6">
-            <div className="bg-white p-6 rounded-2xl shadow-sm border">
-              <h3 className="font-bold text-lg mb-4">Parler directement à Khady</h3>
-              <a 
-                href="https://wa.me/33600000000?text=Bonjour%20Khady,%20je%20viens%20de%20LSF" 
-                target="_blank"
-                className="flex items-center gap-3 bg-green-500 text-white p-3 rounded-xl hover:bg-green-600"
-              >
-                <MessageCircle size={20}/> WhatsApp direct
-              </a>
-              <p className="text-xs text-gray-500 mt-2">Réponse moyenne : 2h</p>
-            </div>
-
-            <div className="bg-white p-6 rounded-2xl shadow-sm border space-y-4">
-              <div className="flex items-start gap-3">
-                <Phone className="text-orange mt-1" size={20}/>
-                <div>
-                  <p className="font-semibold">Téléphone</p>
-                  <p className="text-gray-600">+33 6 00 00 00 00</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <Mail className="text-orange mt-1" size={20}/>
-                <div>
-                  <p className="font-semibold">Email</p>
-                  <p className="text-gray-600">contact@logementsansfrontieres.com</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <MapPin className="text-orange mt-1" size={20}/>
-                <div>
-                  <p className="font-semibold">Bureaux</p>
-                  <p className="text-gray-600">Paris • Abidjan • Casablanca</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-orange/5 p-6 rounded-2xl border border-orange/20">
-              <h4 className="font-bold mb-2">Horaires</h4>
-              <p className="text-sm text-gray-700">Lun-Ven : 9h-19h (Paris)<br/>Sam : 10h-16h<br/>Urgence logement : 7j/7 sur WhatsApp</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Map placeholder */}
-      <section className="max-w-7xl mx-auto px-4 pb-16">
-        <div className="h-80 bg-gray-100 rounded-2xl grid place-items-center text-gray-500">
-          Carte interactive – Sièges LSF (à brancher avec Leaflet)
         </div>
       </section>
     </MainLayout>
-  )
+  );
 }

@@ -20,6 +20,7 @@ import Partenaires from '../pages/Partenaires';
 import Contact from '../pages/Contact'; // Import ajouté
 import VisaPreparation from '../pages/VisaPreparation'; // Import ajouté
 import AttestationLogement from '../pages/AttestationLogement'; // Import ajouté
+import BlocEtConseil from '../pages/BlocEtConseil'
 
 // Import des dashboards
 import StudentDashboard from '../pages/Dashboard/StudentDashboard';
@@ -60,7 +61,7 @@ export default function AppRoutes() {
         <Route path="/contact" element={<Contact />} /> {/* Ajouté */}
         <Route path="/visa-preparation" element={<VisaPreparation />} /> {/* Ajouté */}
         <Route path="/attestation" element={<AttestationLogement />} /> {/* Ajouté */}
-        
+         <Route path="/bloc-et-conseil" element={<BlocEtConseil />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         

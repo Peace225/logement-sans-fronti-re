@@ -70,7 +70,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}
             className="text-base md:text-lg leading-[1.7] text-white/60 max-w-lg mb-9 font-light"
           >
-            Parce qu'étudier à l'étranger commence par se sentir <span className="text-white/90 font-medium">chez soi</span>. LSF sécurise votre installation.
+            Parce qu'étudier à l'étranger commence par se sentir <span className="text-white/90 font-medium">chez soi</span>. La Clés de Lamine sécurise votre installation.
           </motion.p>
 
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="flex flex-wrap items-center gap-3 mb-12">

@@ -33,12 +33,9 @@ export default function AttestationLogement() {
               <Info className="text-[#F25C05]" size={22} />
             </div>
             <div>
-              <h3 className="text-[#0A192F] font-bold text-lg mb-1.5">A propos de ce document</h3>
+              <h3 className="text-[#0A192F] font-bold text-lg mb-1.5">INFORMATIONS IMPORTANTES</h3>
               <p className="text-zinc-500 leading-relaxed text-sm">
-                Obtenir une attestation d'hébergement est essentiel pour vos démarches de visa, 
-                votre inscription universitaire et votre installation dans votre pays d'études. 
-                Veuillez remplir soigneusement le formulaire ci-dessous avec vos informations exactes 
-                afin de générer un document conforme aux exigences.
+                L'attestation de logement est un document essentiel pour préparer votre installation dans votre pays d'études. Veillez à renseigner des informations exactes et complètes afin de générer une attestation conforme à votre situation.
               </p>
             </div>
           </div>

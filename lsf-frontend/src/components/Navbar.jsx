@@ -12,9 +12,9 @@ export default function Navbar() {
             <Key size={24} className="text-white" />
           </div>
           <div className="flex flex-col">
-            <span className="font-black text-xl tracking-tight text-white whitespace-nowrap">Les clés de Lamine</span>
+            <span className="font-black text-xl tracking-tight text-white whitespace-nowrap">Les Clés de Lamine</span>
             <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-zinc-400 whitespace-nowrap">
-              Habitat Etudiant International
+              Votre logement étudiant à l'international
             </span>
           </div>
         </Link>
@@ -36,7 +36,7 @@ export default function Navbar() {
             className="hidden lg:flex items-center gap-2 bg-white/5 border border-white/10 hover:bg-white/10 text-white px-4 py-2.5 rounded-lg text-sm font-semibold transition-all whitespace-nowrap"
           >
             <FileText size={16} />
-            Attestation logement
+            Attestation de logement
           </Link>
 
           <Link 

@@ -114,18 +114,30 @@ export default function AttestationLogement() {
             </div>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="space-y-1.5">
-                <label className="text-[11px] font-semibold text-zinc-500 uppercase tracking-wider ml-1">Type de logement</label>
+                <label className="text-[11px] font-semibold text-zinc-500 uppercase tracking-wider ml-1">Logement souhaité</label>
                 <select className="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-4 py-3.5 text-sm text-[#0A192F] focus:bg-white focus:ring-4 focus:ring-[#F25C05]/10 focus:border-[#F25C05] hover:border-zinc-300 transition-all outline-none cursor-pointer">
-                  <option>Résidence étudiante</option>
-                  <option>Studio</option>
+                  <option>Studio individuel</option>
                   <option>Appartement</option>
                   <option>Colocation</option>
+                  <option>Chambre en résidence étudiante</option>
                   <option>Chambre chez l'habitant</option>
+                  <option>Sans préférence</option>
                 </select>
               </div>
-              <div className="space-y-1.5"><label className="text-[11px] font-semibold text-zinc-500 uppercase tracking-wider ml-1">Ville du logement</label><input className="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-4 py-3.5 text-sm text-[#0A192F] focus:bg-white focus:ring-4 focus:ring-[#F25C05]/10 focus:border-[#F25C05] hover:border-zinc-300 transition-all outline-none" /></div>
-              <div className="space-y-1.5"><label className="text-[11px] font-semibold text-zinc-500 uppercase tracking-wider ml-1">Date d'entrée souhaitée</label><input type="date" className="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-4 py-3.5 text-sm text-[#0A192F] focus:bg-white focus:ring-4 focus:ring-[#F25C05]/10 focus:border-[#F25C05] hover:border-zinc-300 transition-all outline-none" /></div>
-              <div className="space-y-1.5"><label className="text-[11px] font-semibold text-zinc-500 uppercase tracking-wider ml-1">Durée du séjour</label><input placeholder="Ex: 12 mois" className="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-4 py-3.5 text-sm text-[#0A192F] focus:bg-white focus:ring-4 focus:ring-[#F25C05]/10 focus:border-[#F25C05] hover:border-zinc-300 transition-all outline-none" /></div>
+              <div className="space-y-1.5">
+                <label className="text-[11px] font-semibold text-zinc-500 uppercase       tracking-wider ml-1">
+                  Ville d'études
+                </label>
+                <input  placeholder="Ex: Paris, Bruxelles, Lyon, Barcelone" className="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-4 py-3.5 text-sm text-[#0A192F] focus:bg-white focus:ring-4 focus:ring-[#F25C05]/10 focus:border-[#F25C05] hover:border-zinc-300 transition-all outline-none" />
+              </div>
+              <div className="space-y-1.5">
+                <label className="text-[11px] font-semibold text-zinc-500 uppercase tracking-wider ml-1">Date d'emménagement souhaitée</label>
+                <input type="date" className="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-4 py-3.5 text-sm text-[#0A192F] focus:bg-white focus:ring-4 focus:ring-[#F25C05]/10 focus:border-[#F25C05] hover:border-zinc-300 transition-all outline-none" />
+              </div>
+              <div className="space-y-1.5">
+                <label className="text-[11px] font-semibold text-zinc-500 uppercase tracking-wider ml-1">Durée du séjour</label>
+                <input placeholder="Ex: 12 mois" className="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-4 py-3.5 text-sm text-[#0A192F] focus:bg-white focus:ring-4 focus:ring-[#F25C05]/10 focus:border-[#F25C05] hover:border-zinc-300 transition-all outline-none" />
+              </div>
             </div>
           </div>
 
